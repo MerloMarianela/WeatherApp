@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/core';
 import {Button, ImageBackground, Text, View} from 'react-native';
 import {overcastClouds} from '../constants/Constants';
@@ -10,7 +10,7 @@ export const NotFound = () => {
     <ImageBackground source={overcastClouds} style={styles.container}>
       <View style={styles.containerDetails}>
       </View>
-      <Text style={styles.temperature}>Ciudad no encontrada</Text>
+      <Text style={{...styles.temperature, marginBottom: 300, textAlign: 'center' }}>Ciudad no encontrada</Text>
       <Button title='back' onPress={() => {navigation.navigate('Home')}}/>
     </ImageBackground>
     

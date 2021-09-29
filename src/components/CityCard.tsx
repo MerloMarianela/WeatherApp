@@ -5,6 +5,7 @@ import { styles } from '../style/styles';
 import { centigrados, kelvin } from '../constants/Constants';
 
 export const CityCard = ({city, setSelectedCity}) => {
+  
   const celcius = Math.trunc(city.weather.temperature.actual - kelvin);
   const navigation = useNavigation<any>()
   const windowWidth = Dimensions.get('window').width

@@ -1,19 +1,18 @@
 import {useNavigation} from '@react-navigation/core';
 import {useQuery} from '@apollo/client';
 import React, {useContext, useState} from 'react';
-import {Image, TextInput, View} from 'react-native';
+import {TextInput} from 'react-native';
 import {CitiesContext} from '../contexts/citiesContext';
 import {WEATHER_QUERY_NAME} from '../graphql/weatherQuery';
 import {styles} from '../style/styles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {Text} from 'react-native-elements';
 import { Button } from 'react-native-elements/dist/buttons/Button';
+import { TypeSearch } from '../interfaces/Interfaces';
 
 export const Search = () => {
   const navigation = useNavigation<any>();
   const [text, onChangeText] = useState('');
   const [noNameSelected, setNoNameSelected] = useState(true);
-  const {selectCity, cities, setAllCities} = useContext(CitiesContext);
+  const {selectCity, cities, setAllCities} = useContext<TypeSearch | any>(CitiesContext);
 
   const {loading, error, data} = useQuery(WEATHER_QUERY_NAME, {
     variables: {name: text},
@@ -36,7 +35,7 @@ export const Search = () => {
     },
   });
 
-  const searchByName = (text: string |number ) => {
+  const searchByName = (text: string | number ) => {
     if (text) {
       setNoNameSelected(false);
     }

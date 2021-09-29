@@ -1,11 +1,9 @@
 import React from 'react';
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, View} from 'react-native';
 import {styles} from '../style/styles';
 import {Search} from '../components/Search';
-import { overcastClouds, citiesArray } from '../constants/Constants';
+import {overcastClouds} from '../constants/Constants';
 import {Cities} from '../components/Cities';
-
-citiesArray
 
 export const Home = () => {
   return (

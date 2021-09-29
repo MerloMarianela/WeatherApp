@@ -51,9 +51,13 @@ export interface Wind {
   deg:   number;
 }
 
+export interface ContextState {
+  name: string;
+}
+
 export interface TypeSearch {
-  selectCity?:(city: string[]) => void;
-  cities:           any[];
-  setAllCities:(city: string[]) => void;
-  selectedCity:      string[];
+selectedCity: GetCityByID | undefined
+selectCity:   (selected: string | number) => void
+cities:       [] 
+setAllCities: (cities: []) => void
 }
